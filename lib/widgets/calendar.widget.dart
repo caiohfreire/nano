@@ -13,7 +13,7 @@ class CalendarWidget extends StatelessWidget {
       controller: CalendarWeekController(),
       showMonth: true,
       backgroundColor: XColors.terrary,
-      dateBackgroundColor: XColors.grayAccent,
+      dateBackgroundColor: XColors.greyAccent,
       dayShapeBorder: BoxShape.circle,
       dateStyle: const TextStyle(
         color: Colors.white,
