@@ -60,6 +60,27 @@ class _CalendarState extends State<Calendar> {
               ),
             ),
           ),
+          const Spacer(
+            flex: 2,
+          ),
+          Column(
+            children: [
+              Image.asset(
+                "assets/empty-list.png",
+                width: 250,
+                height: 250,
+                fit: BoxFit.cover,
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                "You don't have any task yet",
+                style: TextStyle(color: Colors.white, fontSize: 18),
+              )
+            ],
+          ),
+          const Spacer(
+            flex: 5,
+          ),
         ],
       ),
     );
