@@ -18,33 +18,30 @@ class _CalendarState extends State<Calendar> {
       body: Column(
         children: [
           const SafeArea(
-            child: Padding(
-              padding: EdgeInsets.all(0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Calendar",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 24,
-                            fontWeight: FontWeight.w600,
-                          ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Calendar",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w600,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                  SizedBox(
-                    height: 125,
-                    child: CalendarWidget(),
-                  ),
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: 125,
+                  child: CalendarWidget(),
+                ),
+              ],
             ),
           ),
           Padding(
@@ -73,7 +70,7 @@ class _CalendarState extends State<Calendar> {
               ),
               const SizedBox(height: 20),
               const Text(
-                "You don't have any task yet",
+                "You don't have any tasks yet",
                 style: TextStyle(color: Colors.white, fontSize: 18),
               )
             ],

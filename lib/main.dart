@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nano/screens/focus.screen.dart';
 import 'package:nano/screens/home.screen.dart';
 import 'package:nano/screens/calendar.screen.dart';
 import 'package:nano/widgets/bottomNav.widget.dart';
@@ -54,6 +55,8 @@ class _MainScreenState extends State<MainScreen> {
         children: const [
           Home(),
           Calendar(),
+          Home(),
+          FocusMode(),
         ],
       ),
       bottomNavigationBar: BottomNav(
