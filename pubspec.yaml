@@ -41,6 +41,7 @@ dependencies:
   circular_countdown_timer: ^0.2.4
   wheel_picker: ^0.1.1
   duration_time_picker: ^1.0.1
+  d_chart: ^2.8.0
 
 dev_dependencies:
   flutter_test:
