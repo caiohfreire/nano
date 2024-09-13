@@ -15,19 +15,16 @@ class BottomNav extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      child: CurvedNavigationBar(
-        index: currentIndex,
-        items: navItems,
-        onTap: onTap,
-        color: XColors.primary,
-        backgroundColor: XColors.background,
-        buttonBackgroundColor: XColors.primary,
-        height: 75,
-        animationCurve: Curves.easeInOut,
-        animationDuration: const Duration(milliseconds: 300),
-      ),
+    return CurvedNavigationBar(
+      index: currentIndex,
+      items: navItems,
+      onTap: onTap,
+      color: XColors.primary,
+      backgroundColor: Colors.transparent,
+      buttonBackgroundColor: XColors.primary,
+      height: 75,
+      animationCurve: Curves.easeInOut,
+      animationDuration: const Duration(milliseconds: 300),
     );
   }
 }

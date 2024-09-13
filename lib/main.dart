@@ -45,23 +45,31 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        controller: _pageController,
-        onPageChanged: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        children: const [
-          Home(),
-          Calendar(),
-          Home(),
-          FocusMode(),
+      extendBody: true,
+      body: Stack(
+        children: [
+          PageView(
+            controller: _pageController,
+            onPageChanged: (index) {
+              setState(() {
+                _currentIndex = index;
+              });
+            },
+            children: const [
+              Home(),
+              Calendar(),
+              Home(),
+              FocusMode(),
+            ],
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: BottomNav(
+              currentIndex: _currentIndex,
+              onTap: _onNavBarTap,
+            ),
+          ),
         ],
-      ),
-      bottomNavigationBar: BottomNav(
-        currentIndex: _currentIndex,
-        onTap: _onNavBarTap,
       ),
     );
   }

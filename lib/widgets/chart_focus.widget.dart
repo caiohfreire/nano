@@ -36,8 +36,8 @@ class ChartFocusWidget extends StatelessWidget {
         showMeasureLabel: true,
         spaceDomainLabeltoChart: 10,
         spaceMeasureLabeltoChart: 5,
-        spaceDomainLinetoChart: 15,
-        spaceMeasureLinetoChart: 20,
+        spaceDomainLinetoChart: 10,
+        spaceMeasureLinetoChart: 10,
         spaceBetweenItem: 16,
         radiusBar: const BorderRadius.only(
           topLeft: Radius.circular(8),
@@ -81,35 +81,6 @@ class ChartFocusWidget extends StatelessWidget {
                     fontSize: 16,
                     color: Colors.white,
                   ),
-            // valueCustom: days[index]['total'] > 20
-            //     ? Align(
-            //         alignment: Alignment.center,
-            //         child: Column(
-            //           mainAxisSize: MainAxisSize.min,
-            //           children: [
-            //             Container(
-            //               padding: const EdgeInsets.all(4),
-            //               decoration: BoxDecoration(
-            //                 border: Border.all(width: 2),
-            //                 shape: BoxShape.circle,
-            //               ),
-            //               child: Text(
-            //                 '${days[index]['total']}',
-            //                 style: const TextStyle(
-            //                   fontSize: 11,
-            //                   color: Colors.red,
-            //                   fontWeight: FontWeight.w900,
-            //                 ),
-            //               ),
-            //             ),
-            //             const Text(
-            //               '😄',
-            //               style: TextStyle(fontSize: 20),
-            //             ),
-            //           ],
-            //         ),
-            //       )
-            //     : null,
             valueTooltip: '${days[index]['total']} focused',
           );
         }),
