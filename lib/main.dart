@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nano/screens/focus.screen.dart';
 import 'package:nano/screens/home.screen.dart';
 import 'package:nano/screens/calendar.screen.dart';
+import 'package:nano/services/task_list.mock.dart';
 import 'package:nano/widgets/bottomNav.widget.dart';
 
 void main() {
@@ -55,11 +56,13 @@ class _MainScreenState extends State<MainScreen> {
                 _currentIndex = index;
               });
             },
-            children: const [
-              Home(),
-              Calendar(),
-              Home(),
-              FocusMode(),
+            children: [
+              Home(
+                hasTask: taskList.isNotEmpty,
+              ),
+              const Calendar(),
+              Home(hasTask: false),
+              const FocusMode(),
             ],
           ),
           Align(

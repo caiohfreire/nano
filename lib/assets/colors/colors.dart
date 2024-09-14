@@ -7,5 +7,7 @@ class XColors {
   static Color terrary = const Color(0xFF363636);
   static Color greyAccent = const Color(0xFF272727);
   static Color grey200 = const Color(0xFFA5A5A5);
+  static Color grey300 = const Color(0xFFAFAFAF);
+  static Color grey400 = const Color(0xFF797979);
   static Color lightGrey = const Color(0xFF979797);
 }

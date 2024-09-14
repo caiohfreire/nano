@@ -23,7 +23,7 @@ class _FocusModeState extends State<FocusMode> {
       backgroundColor: XColors.background,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(bottom: 50),
+          padding: const EdgeInsets.only(bottom: 40),
           child: SingleChildScrollView(
             child: Column(
               children: [
