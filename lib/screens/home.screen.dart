@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:nano/assets/colors/colors.dart';
 import 'package:nano/widgets/header.widget.dart';
+import 'package:nano/widgets/search.widget.dart';
 import 'package:nano/widgets/task.widget.dart';
 import 'package:nano/services/task_list.mock.dart';
 
+// ignore: must_be_immutable
 class Home extends StatefulWidget {
   Home({super.key, required this.hasTask});
 
@@ -26,18 +28,16 @@ class _HomeState extends State<Home> {
               child: Header(),
             ),
           ),
+          const SearchWidget(),
           widget.hasTask
               ? const SizedBox(height: 20)
-              : const SizedBox(height: 100),
+              : const SizedBox(height: 0),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(
-                bottom: 60,
-                left: 24,
-                right: 24,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: widget.hasTask
                   ? ListView.builder(
+                      padding: const EdgeInsets.only(bottom: 100),
                       itemCount: taskList.length,
                       itemBuilder: (context, index) {
                         final task = taskList[index];
@@ -52,16 +52,13 @@ class _HomeState extends State<Home> {
                             icon: task.icon,
                             iconColor: task.iconColor,
                             isChecked: false,
-                            onChanged: (bool isChecked) {
-                              print(
-                                '${task.title} está ${isChecked ? 'marcada' : 'desmarcada'}',
-                              );
-                            },
+                            onChanged: (bool isChecked) {},
                           ),
                         );
                       },
                     )
                   : Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset(
                           "assets/Checklist-rafiki.png",
