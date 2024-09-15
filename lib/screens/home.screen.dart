@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nano/assets/colors/colors.dart';
-import 'package:nano/widgets/header.widget.dart';
-import 'package:nano/widgets/search.widget.dart';
-import 'package:nano/widgets/task.widget.dart';
+import 'package:nano/widgets/home/header.widget.dart';
+import 'package:nano/widgets/home/search.widget.dart';
+import 'package:nano/widgets/shared/picker.widget.dart';
+import 'package:nano/widgets/shared/task.widget.dart';
 import 'package:nano/services/task_list.mock.dart';
 
 // ignore: must_be_immutable
@@ -31,6 +32,17 @@ class _HomeState extends State<Home> {
           const SearchWidget(),
           widget.hasTask
               ? const SizedBox(height: 20)
+              : const SizedBox(height: 0),
+          const Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12),
+              ),
+              PickerWidget(),
+            ],
+          ),
+          widget.hasTask
+              ? const SizedBox(height: 10)
               : const SizedBox(height: 0),
           Expanded(
             child: Padding(

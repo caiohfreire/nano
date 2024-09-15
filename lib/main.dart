@@ -3,7 +3,7 @@ import 'package:nano/screens/focus.screen.dart';
 import 'package:nano/screens/home.screen.dart';
 import 'package:nano/screens/calendar.screen.dart';
 import 'package:nano/services/task_list.mock.dart';
-import 'package:nano/widgets/bottomNav.widget.dart';
+import 'package:nano/widgets/shared/bottomNav.widget.dart';
 
 void main() {
   runApp(const Nano());

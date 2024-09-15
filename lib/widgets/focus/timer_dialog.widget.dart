@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nano/assets/colors/colors.dart';
-import 'package:nano/widgets/timer_range_picker.widget.dart';
+import 'package:nano/widgets/focus/timer_range_picker.widget.dart';
 
 class TimerDialogWidget extends StatefulWidget {
   const TimerDialogWidget({super.key});

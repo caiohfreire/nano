@@ -1,10 +1,10 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
-import 'package:nano/widgets/chart_focus.widget.dart';
+import 'package:nano/widgets/focus/chart_focus.widget.dart';
 
-import 'package:nano/widgets/timer.widget.dart';
+import 'package:nano/widgets/focus/timer.widget.dart';
 import 'package:nano/assets/colors/colors.dart';
-import 'package:nano/widgets/timer_dialog.widget.dart';
+import 'package:nano/widgets/focus/timer_dialog.widget.dart';
 
 class FocusMode extends StatefulWidget {
   const FocusMode({super.key});

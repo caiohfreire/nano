@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nano/assets/colors/colors.dart';
-import 'package:nano/widgets/calendar.widget.dart';
-import 'package:nano/widgets/switch_calendar.widget.dart';
+import 'package:nano/widgets/calendar/calendar.widget.dart';
+import 'package:nano/widgets/calendar/switch_calendar.widget.dart';
 
 class Calendar extends StatefulWidget {
   const Calendar({super.key});
