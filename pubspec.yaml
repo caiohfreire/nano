@@ -43,6 +43,7 @@ dependencies:
   duration_time_picker: ^1.0.1
   d_chart: ^2.8.0
   msh_checkbox: ^2.0.1
+  dropdown_button2: ^2.3.9
 
 dev_dependencies:
   flutter_test:

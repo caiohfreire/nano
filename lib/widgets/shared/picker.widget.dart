@@ -1,14 +1,15 @@
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:nano/assets/colors/colors.dart';
 
-class PickerWidget extends StatefulWidget {
-  const PickerWidget({super.key});
+class DropdownWidget extends StatefulWidget {
+  const DropdownWidget({super.key});
 
   @override
-  _PickerWidgetState createState() => _PickerWidgetState();
+  _DropdownWidgetState createState() => _DropdownWidgetState();
 }
 
-class _PickerWidgetState extends State<PickerWidget> {
+class _DropdownWidgetState extends State<DropdownWidget> {
   final List<String> options = [
     'Today',
     'This Week',
@@ -20,38 +21,92 @@ class _PickerWidgetState extends State<PickerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8),
-      decoration: BoxDecoration(
-        color: XColors.terrary,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(
-          color: XColors.grey400,
+    return DropdownButtonHideUnderline(
+      child: DropdownButton2<String>(
+        isExpanded: true,
+        hint: const Row(
+          children: [
+            Icon(
+              Icons.list,
+              size: 16,
+              color: Colors.yellow,
+            ),
+            SizedBox(
+              width: 4,
+            ),
+            Expanded(
+              child: Text(
+                'Select Item',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.yellow,
+                ),
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ],
         ),
-      ),
-      child: DropdownButtonHideUnderline(
-        child: DropdownButton<String>(
-          value: selectedValue,
-          icon: const Icon(
-            Icons.arrow_drop_down,
-            color: Colors.white,
+        items: options
+            .map(
+              (String item) => DropdownMenuItem<String>(
+                value: item,
+                child: Text(
+                  item,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            )
+            .toList(),
+        value: selectedValue,
+        onChanged: (String? value) {
+          setState(() {
+            selectedValue = value!;
+          });
+        },
+        buttonStyleData: ButtonStyleData(
+          height: 50,
+          width: 130,
+          padding: const EdgeInsets.only(left: 14, right: 14),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(14),
+            border: Border.all(
+              color: XColors.grey400,
+            ),
+            color: XColors.terrary,
           ),
-          dropdownColor: XColors.terrary,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 16,
+          elevation: 2,
+        ),
+        iconStyleData: const IconStyleData(
+          icon: Icon(
+            Icons.arrow_forward_ios_outlined,
           ),
-          onChanged: (String? newValue) {
-            setState(() {
-              selectedValue = newValue!;
-            });
-          },
-          items: options.map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(
-              value: value,
-              child: Text(value),
-            );
-          }).toList(),
+          iconSize: 14,
+          iconEnabledColor: Colors.white,
+          iconDisabledColor: Colors.grey,
+        ),
+        dropdownStyleData: DropdownStyleData(
+          maxHeight: 200,
+          width: 150,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(14),
+            color: XColors.terrary,
+          ),
+          offset: const Offset(0, 0),
+          scrollbarTheme: ScrollbarThemeData(
+            radius: const Radius.circular(40),
+            thickness: WidgetStateProperty.all<double>(6),
+            thumbVisibility: WidgetStateProperty.all<bool>(true),
+          ),
+        ),
+        menuItemStyleData: const MenuItemStyleData(
+          height: 40,
+          padding: EdgeInsets.only(left: 14, right: 14),
         ),
       ),
     );

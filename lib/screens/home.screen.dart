@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 12),
               ),
-              PickerWidget(),
+              DropdownWidget(),
             ],
           ),
           widget.hasTask
