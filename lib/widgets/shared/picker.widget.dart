@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nano/assets/colors/colors.dart';
 
 class PickerWidget extends StatefulWidget {
-  const PickerWidget({Key? key}) : super(key: key);
+  const PickerWidget({super.key});
 
   @override
   _PickerWidgetState createState() => _PickerWidgetState();
