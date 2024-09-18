@@ -1,7 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:nano/assets/colors/colors.dart';
-import 'package:nano/assets/constants/navItems.constants.dart';
+import 'package:nano/assets/constants/nav_items.constants.dart';
 
 class BottomNav extends StatelessWidget {
   final int currentIndex;
