@@ -2,10 +2,14 @@ import 'dart:math';
 
 import 'package:d_chart/bar_custom/view.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:nano/assets/colors/colors.dart';
 
 class ChartFocusWidget extends StatelessWidget {
   ChartFocusWidget({super.key});
+
+  final String dayOfWeek =
+      DateFormat('EEE').format(DateTime.now()).toUpperCase();
 
   final List days = [
     {'class': 'SUN', 'total': 2.3},
@@ -17,7 +21,6 @@ class ChartFocusWidget extends StatelessWidget {
     {'class': 'SAT', 'total': 2.0},
   ];
 
-  // A função agora retorna um double corretamente
   double getMaxTotal() {
     return days.map((day) => day['total'] as double).reduce(max);
   }
@@ -57,7 +60,10 @@ class ChartFocusWidget extends StatelessWidget {
         domainLineStyle: const BorderSide(color: Colors.white, width: 2),
         max: getMaxTotal(),
         listData: List.generate(days.length, (index) {
-          Color currentColor = XColors.grey200;
+          Color currentColor = days[index]['class'] == dayOfWeek
+              ? XColors.primary
+              : XColors.grey200;
+
           return DChartBarDataCustom(
             onTap: () {
               print(
@@ -68,7 +74,7 @@ class ChartFocusWidget extends StatelessWidget {
             value: days[index]['total'] as double,
             label: days[index]['class'],
             color: currentColor.withOpacity(1),
-            splashColor: XColors.primary,
+            splashColor: XColors.primary.withOpacity(.6),
             // showValue: days[index]['class'] == 'FRI' ? false : true,
             valueStyle: days[index]['class'] == 'FRI'
                 ? const TextStyle(
