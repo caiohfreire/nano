@@ -108,44 +108,44 @@ class _FocusModeState extends State<FocusMode> {
                       ),
                     ),
                     const SizedBox(height: 55),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 24),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 24),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          const Text(
+                          Text(
                             "Overview",
                             style: TextStyle(color: Colors.white, fontSize: 24),
                           ),
-                          TextButton(
-                            onPressed: () {},
-                            style: ButtonStyle(
-                              backgroundColor: WidgetStateProperty.all(
-                                Colors.white.withOpacity(.21),
-                              ),
-                              shape: WidgetStateProperty.all(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(6),
-                                ),
-                              ),
-                            ),
-                            child: const Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "This week",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                SizedBox(width: 8),
-                                Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: Colors.white,
-                                  size: 16,
-                                ),
-                              ],
-                            ),
-                          ),
+                          // TextButton(
+                          //   onPressed: () {},
+                          //   style: ButtonStyle(
+                          //     backgroundColor: WidgetStateProperty.all(
+                          //       Colors.white.withOpacity(.21),
+                          //     ),
+                          //     shape: WidgetStateProperty.all(
+                          //       RoundedRectangleBorder(
+                          //         borderRadius: BorderRadius.circular(6),
+                          //       ),
+                          //     ),
+                          //   ),
+                          //   child: const Row(
+                          //     mainAxisAlignment: MainAxisAlignment.center,
+                          //     children: [
+                          //       Text(
+                          //         "This week",
+                          //         style: TextStyle(color: Colors.white),
+                          //       ),
+                          //       SizedBox(width: 8),
+                          //       Icon(
+                          //         Icons.keyboard_arrow_down_rounded,
+                          //         color: Colors.white,
+                          //         size: 16,
+                          //       ),
+                          //     ],
+                          //   ),
+                          // ),
                         ],
                       ),
                     ),
